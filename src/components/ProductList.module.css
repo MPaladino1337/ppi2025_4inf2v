@@ -1,54 +1,42 @@
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 2rem 5rem;
-  margin: 15rem 0;
-  gap: 2rem;
+  align-items: stretch;
+  padding: 1.6rem;
+  margin: calc(var(--header-height) + 1.6rem) 0 2rem; /* deixa espaço respeitando a altura do header */
+  gap: 1.2rem;
 }
 
 .productList {
-  padding: 1rem 3rem;
+  padding: 0.8rem 0;
   display: grid;
-  gap: 3rem;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  grid-template-rows: repeat(auto-fit, min-content);
+  gap: 1.6rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  max-width: var(--max-width);
+  margin: 0 auto; /* centraliza a grid de produtos */
 }
 
-.searchContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  width: 100%;
-}
+.searchContainer { display: flex; gap: 0.8rem; align-items: center; justify-content: center; }
 
 .searchInput {
-  display: flex;
-  gap: 1rem;
-  width: 100%;
-  max-width: 60rem;
-  justify-content: center;
-  padding: 1rem;
-  font-size: 2rem;
-  border: 0.25rem solid var(--primary);
-  border-radius: 1rem;
-  background-color: var(--gray-100);
+  flex: 1 1 auto;
+  max-width: 48rem;
+  padding: 0.8rem 1rem;
+  font-size: 1.4rem;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  background: var(--card-bg);
   color: var(--text);
 }
 
 .searchButton {
-  background-color: var(--primary);
-  color: var(--gray-900);
+  background: var(--primary);
+  color: var(--primary-contrast);
   border: none;
-  padding: 1rem 2rem;
-  border-radius: 1rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 2rem;
-  font-weight: bold;
-  border: 0.25rem solid var(--gray-900);
+  font-size: 1.2rem;
+  font-weight: 700;
 }
-
-.searchButton:hover {
-  background-color: var(--primary-dark);
-}
+.searchButton:hover { filter: brightness(0.98); }

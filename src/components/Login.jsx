@@ -1,6 +1,6 @@
 import styles from "./Login.module.css";
 import { useState, useContext, useEffect } from "react";
-import { CartContext } from "../context/CartContext";
+import { SessionContext } from "../context/SessionContext";
 import { Field } from "@base-ui-components/react/field";
 import { Form } from "@base-ui-components/react/form";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
@@ -11,13 +11,13 @@ import { useNavigate } from "react-router";
 export function Login({ value }) {
   // User Context
   const {
-    handleSignIn,
-    handleSignUp,
-    session,
-    sessionLoading,
-    sessionMessage,
-    sessionError,
-  } = useContext(CartContext);
+  handleSignIn,
+  handleSignUp,
+  session,
+  sessionLoading,
+  sessionMessage,
+  sessionError,
+} = useContext(SessionContext);
 
   const navigate = useNavigate();
   useEffect(() => {
